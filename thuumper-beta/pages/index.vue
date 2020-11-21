@@ -1,8 +1,10 @@
 <template>
-  <div class="container bg-secondary">
+  <div role="main" class="container bg-secondary">
     <div>
-      <Logo />
-      <h1 class="title">Thuumper</h1>
+      <div class="flex items-center py-4">
+        <fa class="text-6xl mx-4" :icon="['fas', 'carrot']" />
+        <h1 class="title">Thuumper</h1>
+      </div>
       <div class="links">
         <nuxt-link to="/login" class="button--green"> Login </nuxt-link>
         <a
@@ -23,18 +25,8 @@ export default {};
 </script>
 
 <style scoped>
-/* Sample `apply` at-rules with Tailwind CSS
 .container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 
 .title {

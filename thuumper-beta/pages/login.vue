@@ -11,13 +11,23 @@
             <div>
               <label>Email</label>
               <div>
-                <input type="email" name="email" v-model="email" />
+                <input
+                  type="email"
+                  name="email"
+                  v-model="email"
+                  aria-label="email"
+                />
               </div>
             </div>
             <div>
-              <label>Password</label>
+              <aria-label>Password</aria-label>
               <div>
-                <input type="password" name="password" v-model="password" />
+                <input
+                  type="password"
+                  name="password"
+                  v-model="password"
+                  aria-label="password"
+                />
               </div>
             </div>
             <div>
@@ -68,7 +78,7 @@ export default {
       }
     },
     async thuumperLogin(data) {
-      console.log('data is: ', data);
+      await console.log('data is: ', data);
       return 'nice';
     },
   },

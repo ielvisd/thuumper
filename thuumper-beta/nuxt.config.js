@@ -11,6 +11,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    htmlAttrs: {
+      lang: 'en',
+    },
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -28,6 +31,15 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    [
+      '@nuxtjs/fontawesome',
+      {
+        component: 'fa', //customize component name
+        icons: {
+          solid: ['faCarrot'],
+        },
+      },
+    ],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -40,4 +52,4 @@ export default {
   storybook: {
     addons: ['@storybook/addon-controls', '@storybook/addon-a11y'],
   },
-}
+};

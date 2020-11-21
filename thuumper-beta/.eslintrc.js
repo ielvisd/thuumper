@@ -1,26 +1,34 @@
 module.exports = {
-    root: true,
-    env: {
-        node: true,
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+  },
+  parserOptions: {
+    parser: 'babel-eslint',
+  },
+  extends: [
+    '@nuxtjs',
+    'prettier',
+    'prettier/vue',
+    'plugin:prettier/recommended',
+    'plugin:nuxt/recommended',
+  ],
+  plugins: ['prettier'],
+  rules: {
+    'no-underscore-dangle': 'off',
+    'vue/no-v-html': 'off',
+  },
+  overrides: [
+    {
+      files: ['*.test.js'],
+      env: { jest: true },
     },
-    extends: ['plugin:vue/recommended', '@vue/airbnb', '@vue/prettier'],
-    parserOptions: {
-        parser: 'babel-eslint',
+    {
+      files: ['*.stories.js'],
+      rules: {
+        'import/no-extraneous-dependencies': [0],
+      },
     },
-    rules: {
-        'no-underscore-dangle': 'off',
-        'vue/no-v-html': 'off',
-    },
-    overrides: [
-        {
-            files: ['*.test.js'],
-            env: { jest: true },
-        },
-        {
-            files: ['*.stories.js'],
-            rules: {
-                'import/no-extraneous-dependencies': [0],
-            },
-        },
-    ],
-}
+  ],
+};
