@@ -20,13 +20,13 @@ export default {
     type() {
       switch (true) {
         case this.href:
-          return 'a'
+          return 'a';
         case this.to:
-          return 'nuxt-link'
+          return 'nuxt-link';
         default:
-          return 'button'
+          return 'button';
       }
     },
   },
-}
+};
 </script>

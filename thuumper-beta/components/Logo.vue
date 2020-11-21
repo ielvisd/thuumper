@@ -19,11 +19,11 @@ export default {
   computed: {
     type() {
       if (this.href) {
-        return 'a'
+        return 'a';
       } else {
-        return 'button'
+        return 'button';
       }
     },
   },
-}
+};
 </script>

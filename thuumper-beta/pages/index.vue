@@ -1,24 +1,17 @@
 <template>
-  <div class="container bg-primary">
+  <div class="container bg-secondary">
     <div>
       <Logo />
-      <h1 class="title">thuumper-beta</h1>
+      <h1 class="title">Thuumper</h1>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
+        <nuxt-link to="/login" class="button--green"> Login </nuxt-link>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           rel="noopener noreferrer"
           class="button--grey"
         >
-          GitHub
+          Sign Up
         </a>
       </div>
     </div>
@@ -26,10 +19,10 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
-<style>
+<style scoped>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
