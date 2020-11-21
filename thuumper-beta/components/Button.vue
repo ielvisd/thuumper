@@ -1,5 +1,5 @@
-<template>
-  <component :is="type" :href="href" class="button">
+<template functional>
+  <component :is="type" :href="href" :to="to" class="button">
     <slot />
   </component>
 </template>
@@ -18,10 +18,13 @@ export default {
   },
   computed: {
     type() {
-      if (this.href) {
-        return 'a'
-      } else {
-        return 'button'
+      switch (true) {
+        case this.href:
+          return 'a'
+        case this.to:
+          return 'nuxt-link'
+        default:
+          return 'button'
       }
     },
   },

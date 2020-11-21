@@ -35,4 +35,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  // StoryBook
+  storybook: {
+    addons: ['@storybook/addon-controls', '@storybook/addon-a11y'],
+  },
 }
