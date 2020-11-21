@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container bg-primary">
     <div>
       <Logo />
       <h1 class="title">thuumper-beta</h1>
