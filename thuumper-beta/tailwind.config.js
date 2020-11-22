@@ -4,8 +4,9 @@ module.exports = {
       colors: {
         primary: '#15181E',
         secondary: '#FEEAFA',
-        tertiary: '#CBC0D3',
+        tertiary: '#1C4CA4',
+        carrot: '#D78153',
       },
     },
   },
-}
+};
