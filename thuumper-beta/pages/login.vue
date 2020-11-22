@@ -1,45 +1,43 @@
 // pages/login.vue
 
 <template>
-  <section>
+  <section role="main">
     <div class="container">
       <div>
-        <div>
-          <h2>Welcome back!</h2>
-          <!-- <Notification v-if="error" :message="error" /> -->
-          <form method="post" @submit.prevent="login">
-            <div>
-              <label>Email</label>
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  v-model="email"
-                  aria-label="email"
-                />
-              </div>
-            </div>
-            <div>
-              <aria-label>Password</aria-label>
-              <div>
-                <input
-                  type="password"
-                  name="password"
-                  v-model="password"
-                  aria-label="password"
-                />
-              </div>
-            </div>
-            <div>
-              <button type="submit">Log In</button>
-            </div>
-          </form>
+        <h1>Welcome back!</h1>
+        <!-- <Notification v-if="error" :message="error" /> -->
+        <form method="post" @submit.prevent="login">
           <div>
-            <p>
-              Don't have an account?
-              <nuxt-link to="/register">Register</nuxt-link>
-            </p>
+            <label>Email</label>
+            <div>
+              <input
+                v-model="email"
+                type="email"
+                name="email"
+                aria-label="email"
+              />
+            </div>
           </div>
+          <div>
+            <aria-label>Password</aria-label>
+            <div>
+              <input
+                v-model="password"
+                type="password"
+                name="password"
+                aria-label="password"
+              />
+            </div>
+          </div>
+          <div>
+            <button type="submit">Log In</button>
+          </div>
+        </form>
+        <div>
+          <p>
+            Don't have an account?
+            <nuxt-link to="/register">Register</nuxt-link>
+          </p>
         </div>
       </div>
     </div>
@@ -77,8 +75,8 @@ export default {
         this.error = e.response.data.message;
       }
     },
-    async thuumperLogin(data) {
-      await console.log('data is: ', data);
+    thuumperLogin(data) {
+      // await console.log('data is: ', data);
       return 'nice';
     },
   },

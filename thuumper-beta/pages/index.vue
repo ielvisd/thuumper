@@ -1,9 +1,17 @@
 <template>
   <div role="main" class="container bg-secondary">
     <div>
-      <div class="flex items-center py-4">
-        <fa class="text-6xl mx-4" :icon="['fas', 'carrot']" />
-        <h1 class="title">Thuumper</h1>
+      <div class="flex-col align-center justify-center items-center py-12">
+        <div class="flex items-center">
+          <fa class="text-6xl mx-4" :icon="['fas', 'carrot']" />
+          <h1 class="title">Thuumper</h1>
+        </div>
+        <img
+          class="m-auto w-3/5"
+          src="../assets/thumper.png"
+          alt="Cartoon Thumper from Bambi
+        stomping his foot."
+        />
       </div>
       <div class="links">
         <nuxt-link to="/login" class="button--green"> Login </nuxt-link>
@@ -26,7 +34,7 @@ export default {};
 
 <style scoped>
 .container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
+  @apply min-h-screen flex justify-center text-center mx-auto;
 }
 
 .title {
