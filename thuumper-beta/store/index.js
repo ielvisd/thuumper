@@ -1,18 +1,17 @@
-export const state = () => ({
-  loggedIn: false,
-  user: null,
-});
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-export const getters = {
-  isAuthenticated(state) {
-    return state.loggedIn;
-  },
+import taskManager from './taskManager';
 
-  loggedInUser(state) {
-    return state.user;
-  },
-};
+Vue.use(Vuex);
 
-export const mutations = {};
+export default function () {
+  const Store = new Vuex.Store({
+    modules: {
+      // example
+      taskManager,
+    },
+  });
 
-export const actions = {};
+  return Store;
+}

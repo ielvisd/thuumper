@@ -2,11 +2,11 @@
 
 <template>
   <section role="main">
-    <div class="container">
+    <div class="container bg-secondary">
       <div>
         <h1>Welcome back!</h1>
         <!-- <Notification v-if="error" :message="error" /> -->
-        <form method="post" @submit.prevent="login">
+        <form method="post" @submit.prevent="thuumperLoginAttempt">
           <div>
             <label>Email</label>
             <div>
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div>
-            <aria-label>Password</aria-label>
+            <p aria-label="password">Password</p>
             <div>
               <input
                 v-model="password"
@@ -30,13 +30,17 @@
             </div>
           </div>
           <div>
-            <button type="submit">Log In</button>
+            <Button is="button" class="bg-primary btn" type="submit"
+              >Log In</Button
+            >
           </div>
         </form>
         <div>
           <p>
             Don't have an account?
-            <nuxt-link to="/register">Register</nuxt-link>
+            <Button is="nuxt-link" class="bg-tertiary btn" to="/register"
+              >Register</Button
+            >
           </p>
         </div>
       </div>
@@ -46,11 +50,16 @@
 
 <script>
 // import Notification from '~/components/Notification'
+import { mapMutations } from 'vuex';
+import Button from '../components/Button';
+import auth from '../services/Auth.js';
 
 export default {
   components: {
     // Notification,
+    Button,
   },
+  middleware: 'auth',
 
   data() {
     return {
@@ -61,23 +70,20 @@ export default {
   },
 
   methods: {
-    async login() {
+    ...mapMutations('taskManager', ['setLoggedIn', 'setUser']),
+    async thuumperLoginAttempt() {
+      console.log('hello');
       try {
-        await this.thuumperLogin({
-          data: {
-            email: this.email,
-            password: this.password,
-          },
+        await auth.login({
+          email: this.email,
+          password: this.password,
         });
-
+        this.setLoggedIn(true);
+        this.setUser(this.email);
         this.$router.push('/');
       } catch (e) {
-        this.error = e.response.data.message;
+        this.error = e.message;
       }
-    },
-    thuumperLogin(data) {
-      // await console.log('data is: ', data);
-      return 'nice';
     },
   },
 };

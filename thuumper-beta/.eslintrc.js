@@ -18,6 +18,7 @@ module.exports = {
   rules: {
     'no-underscore-dangle': 'off',
     'vue/no-v-html': 'off',
+    'prefer-promise-reject-errors': 'off',
   },
   overrides: [
     {

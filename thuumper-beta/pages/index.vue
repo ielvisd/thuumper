@@ -2,7 +2,7 @@
   <div>
     <div role="main" class="container bg-secondary">
       <div
-        class="px-8 py-12 max-w-md sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-8 lg:ml-auto"
+        class="px-8 py-12 max-w-md sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-8 mx-auto lg:ml-auto"
       >
         <div
           class="flex flex-row items-center max-w-md justify-center lg:ml-auto lg:justify-start"
@@ -35,7 +35,7 @@
           </p>
         </div>
         <div v-if="isAuthenticated">
-          <p>Welcome back {{ loggedInUser.username }}!</p>
+          <p>Welcome back {{ loggedInUser }}!</p>
         </div>
         <div
           v-else
@@ -74,11 +74,12 @@ import Button from '../components/Button';
 
 export default {
   name: 'Thuumper',
+  middleware: 'auth',
   components: {
     Button,
   },
   computed: {
-    ...mapGetters(['isAuthenticated', 'loggedInUser']),
+    ...mapGetters('taskManager', ['isAuthenticated', 'loggedInUser']),
   },
 };
 </script>
