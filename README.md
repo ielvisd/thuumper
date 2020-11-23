@@ -42,7 +42,3 @@ Jest is used for unit and snapshot testing. From `yarn test`
 - Storybook
 
 ---
-
-#### Author
-
-- Elvis Ibarra https://github.com/ielvisd

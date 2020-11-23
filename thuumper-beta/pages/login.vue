@@ -9,24 +9,37 @@
         </h1>
         <!-- <Notification v-if="error" :message="error" /> -->
         <form method="post" @submit.prevent="thuumperLoginAttempt">
-          <div class="mt-4">
-            <label class="font-bold">Email</label>
+          <div class="mt-4 flex flex-col justify-items items-center">
+            <div v-if="isLoginError" class="text-sm text-red-900 text-bold">
+              <p>Please correct the following error(s):</p>
+              <ul>
+                <li
+                  v-for="error in loginErrors"
+                  v-bind:key="error"
+                  class="mt-1"
+                >
+                  {{ error }}
+                </li>
+              </ul>
+            </div>
+
+            <label class="font-bold mt-4">Email</label>
             <div>
               <input
-                class="rounded-lg shaddow-inner py-3 px-2"
                 v-model="email"
+                class="rounded-lg shaddow-inner py-3 px-2"
                 type="email"
                 name="email"
                 aria-label="email"
               />
             </div>
           </div>
-          <div class="mt-4">
+          <div class="mt-4 flex flex-col justify-items items-center">
             <p class="font-bold" aria-label="password">Password</p>
             <div>
               <input
-                class="rounded-lg shaddow-inner py-3 px-2"
                 v-model="password"
+                class="rounded-lg shaddow-inner py-3 px-2"
                 type="password"
                 name="password"
                 aria-label="password"
@@ -53,14 +66,12 @@
 </template>
 
 <script>
-// import Notification from '~/components/Notification'
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 import Button from '../components/Button';
 import auth from '../services/Auth.js';
 
 export default {
   components: {
-    // Notification,
     Button,
   },
 
@@ -68,13 +79,29 @@ export default {
     return {
       email: '',
       password: '',
-      error: null,
     };
   },
 
+  computed: {
+    ...mapGetters('taskManager', ['isLoginError', 'loginErrors']),
+  },
+
   methods: {
-    ...mapMutations('taskManager', ['setLoggedIn', 'setUser']),
+    ...mapMutations('taskManager', ['setLoggedIn', 'setUser', 'setError']),
     async thuumperLoginAttempt() {
+      // Check if there is an email
+      if (!this.email) {
+        this.setError('Email is required.');
+      }
+
+      // Check if there is a password
+      if (!this.password) {
+        this.setError('Password is required.');
+      }
+
+      // Check if email format
+      // Check password length
+
       try {
         await auth.login({
           email: this.email,

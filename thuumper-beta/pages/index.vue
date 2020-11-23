@@ -45,7 +45,7 @@
           </p>
         </div>
         <div v-if="isAuthenticated" class="mt-6 text-center">
-          <Button @click="logout" is="button" class="bg-primary btn">
+          <Button is="button" class="bg-primary btn" @click="logout">
             Logout
           </Button>
         </div>

@@ -1,6 +1,7 @@
 const state = {
   loggedIn: false,
   user: null,
+  errors: [],
 };
 
 export const getters = {
@@ -10,6 +11,18 @@ export const getters = {
 
   loggedInUser(state) {
     return state.user;
+  },
+
+  isLoginError(state) {
+    if (state.errors.length) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  loginErrors(state) {
+    return state.errors;
   },
 };
 
@@ -22,6 +35,9 @@ const mutations = {
   },
   setUser(state, value) {
     state.user = value;
+  },
+  setError(state, value) {
+    state.errors.push(value);
   },
 };
 
