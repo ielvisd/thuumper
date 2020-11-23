@@ -56,14 +56,8 @@
           <Button is="nuxt-link" to="/login" class="bg-primary btn">
             Login
           </Button>
-          <Button
-            is="a"
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-tertiary ml-4 btn"
-          >
-            Sign Up
+          <Button is="button" class="bg-tertiary ml-4 btn" @click="signup">
+            Sign up
           </Button>
         </div>
       </div>
@@ -98,6 +92,17 @@ export default {
     logout() {
       this.setLoggedOut();
       this.$router.push('/');
+    },
+    signup() {
+      const newLine = '\r\n';
+      let msg = 'Thuumper is in closed beta.';
+      msg += newLine;
+      msg += 'Please enter your email to join the waitlist.';
+      msg += newLine;
+      msg += 'Email: _____________________';
+      msg += newLine;
+      msg += 'This should be a modal but I ran out of time. 🙂';
+      alert(msg);
     },
   },
 };

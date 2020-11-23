@@ -55,7 +55,11 @@
         <div class="mt-8">
           <p>
             Don't have an account?
-            <Button is="nuxt-link" class="bg-tertiary btn" to="/register"
+            <Button
+              is="button"
+              class="bg-tertiary btn"
+              to="/register"
+              @click="signup"
               >Register</Button
             >
           </p>
@@ -88,6 +92,17 @@ export default {
 
   methods: {
     ...mapMutations('taskManager', ['setLoggedIn', 'setUser', 'setError']),
+    signup() {
+      const newLine = '\r\n';
+      let msg = 'Thuumper is in closed beta.';
+      msg += newLine;
+      msg += 'Please enter your email to join the waitlist.';
+      msg += newLine;
+      msg += 'Email: _____________________';
+      msg += newLine;
+      msg += 'This should be a modal but I ran out of time. 🙂';
+      alert(msg);
+    },
     async thuumperLoginAttempt() {
       // Check if there is an email
       if (!this.email) {
