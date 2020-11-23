@@ -72,13 +72,12 @@ export default {
   methods: {
     ...mapMutations('taskManager', ['setLoggedIn', 'setUser']),
     async thuumperLoginAttempt() {
-      console.log('hello');
       try {
         await auth.login({
           email: this.email,
           password: this.password,
         });
-        this.setLoggedIn(true);
+        this.setLoggedIn();
         this.setUser(this.email);
         this.$router.push('/');
       } catch (e) {

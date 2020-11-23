@@ -22,6 +22,16 @@
       from Bambi stomping his foot."
         />
         <div
+          v-if="isAuthenticated"
+          class="mt-6 flex flex-col w-full max-w-md text-center lg:text-left lg:ml-auto"
+        >
+          <p class="text-4xl font-bold text-primary leading-tight">
+            Welcome back <span class="text-tertiary"> {{ loggedInUser }}</span
+            >!
+          </p>
+        </div>
+        <div
+          v-else
           class="mt-6 flex flex-col w-full max-w-md text-center lg:text-left lg:ml-auto"
         >
           <p class="text-4xl font-bold text-primary leading-tight">
@@ -34,8 +44,10 @@
             tasks on the fly. Works across devices and even off-line.
           </p>
         </div>
-        <div v-if="isAuthenticated">
-          <p>Welcome back {{ loggedInUser }}!</p>
+        <div v-if="isAuthenticated" class="mt-6 text-center">
+          <Button @click="logout" is="button" class="bg-primary btn">
+            Logout
+          </Button>
         </div>
         <div
           v-else
@@ -69,7 +81,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 import Button from '../components/Button';
 
 export default {
@@ -80,6 +92,13 @@ export default {
   },
   computed: {
     ...mapGetters('taskManager', ['isAuthenticated', 'loggedInUser']),
+  },
+  methods: {
+    ...mapMutations('taskManager', ['setLoggedOut']),
+    logout() {
+      this.setLoggedOut();
+      this.$router.push('/');
+    },
   },
 };
 </script>

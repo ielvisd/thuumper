@@ -15,8 +15,11 @@ export const getters = {
 };
 
 const mutations = {
-  setLoggedIn(state, value) {
-    state.loggedIn = value;
+  setLoggedIn(state) {
+    state.loggedIn = true;
+  },
+  setLoggedOut(state) {
+    state.loggedIn = false;
   },
   setUser(state, value) {
     state.user = value;
