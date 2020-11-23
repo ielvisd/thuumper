@@ -4,7 +4,7 @@
       class="px-8 py-12 max-w-md sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-8 lg:ml-auto"
     >
       <div
-        class="flex flex-row m-auto items-center max-w-md justify-center lg:ml-auto lg:justify-start"
+        class="flex flex-row items-center max-w-md justify-center lg:ml-auto lg:justify-start"
       >
         <fa
           class="text-5xl mx-2 fill-current text-carrot"
@@ -38,7 +38,7 @@
       >
         <nuxt-link
           to="/login"
-          class="inline-block bg-primary text-white px-5 py-3 rounded-lg shadow-lg uppercase tracking-wider font-semibold text-base"
+          class="inline-block bg-primary text-white px-5 py-3 rounded-lg shadow-lg uppercase tracking-wider font-semibold text-base hover:bg-tertiary active:bg-green-500 focus:outline-none focus:shadow-outline"
         >
           Login
         </nuxt-link>
