@@ -7,6 +7,9 @@ module.exports = {
         tertiary: '#1C4CA4',
         carrot: '#D78153',
       },
+      height: {
+        larger: '24rem',
+      },
     },
   },
 };

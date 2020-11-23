@@ -1,35 +1,44 @@
 <template>
   <div role="main" class="container bg-secondary">
-    <div>
-      <div class="flex-col align-center justify-center items-center py-8 px-8">
-        <div class="flex justify-center items-center">
-          <fa
-            class="text-6xl mx-4 fill-current text-carrot"
-            :icon="['fas', 'carrot']"
-          />
-          <h1 class="title text-tertiary">Thuumper</h1>
-        </div>
-        <img
-          class="m-auto w-3/5"
-          src="../assets/thumper.png"
-          alt="Cartoon Thumper from Bambi
-        stomping his foot."
+    <div
+      class="px-8 py-12 max-w-md sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-8 lg:ml-auto"
+    >
+      <div
+        class="flex flex-row m-auto items-center max-w-md justify-center lg:ml-auto lg:justify-start"
+      >
+        <fa
+          class="text-5xl mx-2 fill-current text-carrot"
+          :icon="['fas', 'carrot']"
         />
-        <div class="m-auto w-3/5">
-          <p class="mt-6 text-2xl font-bold text-primary leading-tight">
-            Stomp your tasks with
-            <span class="text-tertiary"> Thuumper Task Manager. </span>
-          </p>
-          <p class="mt-2 text-gray-800">
-            Thuumper helps you get more done. Create, schedule and revisit
-            important tasks on the fly. Works across devices and even off-line.
-          </p>
-        </div>
+        <h1 class="title text-tertiary text-5xl font-bold leading-tight">
+          Thuumper
+        </h1>
       </div>
-      <div>
+      <img
+        class="mt-6 h-64 w-11/12 object-contain object-center sm:h-larger lg:hidden"
+        src="../assets/thumper.png"
+        alt="Cartoon Thumper
+      from Bambi stomping his foot."
+      />
+      <div
+        class="mt-6 flex flex-col w-full max-w-md text-center lg:text-left lg:ml-auto"
+      >
+        <p class="text-4xl font-bold text-primary leading-tight">
+          Stomp your tasks with
+          <br />
+          <span class="text-tertiary"> Thuumper Task Manager. </span>
+        </p>
+        <p class="mt-2 text-gray-800 m-auto text-xl">
+          Thuumper helps you get more done. Create, schedule and complete tasks
+          on the fly. Works across devices and even off-line.
+        </p>
+      </div>
+      <div
+        class="mt-6 flex flex-row max-w-md lg:ml-auto justify-center lg:justify-start"
+      >
         <nuxt-link
           to="/login"
-          class="inline-block bg-primary text-white px-5 py-3 rounded-lg shadow-lg uppercase tracking-wider font-semibold text-sm"
+          class="inline-block bg-primary text-white px-5 py-3 rounded-lg shadow-lg uppercase tracking-wider font-semibold text-base"
         >
           Login
         </nuxt-link>
@@ -43,6 +52,14 @@
         </a>
       </div>
     </div>
+    <div class="hidden lg:flex items-center mr-auto lg:w-1/2">
+      <img
+        class="h-larger w-full object-contain object-center max-w-md"
+        src="../assets/thumper.png"
+        alt="Cartoon Thumper
+      from Bambi stomping his foot."
+      />
+    </div>
   </div>
 </template>
 
@@ -52,23 +69,6 @@ export default {};
 
 <style scoped>
 .container {
-  @apply min-h-screen flex justify-center text-center mx-auto;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  @apply flex justify-center mx-auto;
 }
 </style>
