@@ -3,14 +3,19 @@
 <template>
   <section role="main">
     <div class="container bg-secondary">
-      <div>
-        <h1>Welcome back!</h1>
+      <div
+        class="bg-thumper border rounded-lg p-6 flex flex-col justify-center items-center"
+      >
+        <h1 class="text-center font-bold uppercase tracking-wide">
+          Welcome back!
+        </h1>
         <!-- <Notification v-if="error" :message="error" /> -->
         <form method="post" @submit.prevent="thuumperLoginAttempt">
-          <div>
-            <label>Email</label>
+          <div class="mt-4">
+            <label class="font-bold">Email</label>
             <div>
               <input
+                class="rounded-lg shaddow-inner py-3 px-2"
                 v-model="email"
                 type="email"
                 name="email"
@@ -18,10 +23,11 @@
               />
             </div>
           </div>
-          <div>
-            <p aria-label="password">Password</p>
+          <div class="mt-4">
+            <p class="font-bold" aria-label="password">Password</p>
             <div>
               <input
+                class="rounded-lg shaddow-inner py-3 px-2"
                 v-model="password"
                 type="password"
                 name="password"
@@ -29,13 +35,13 @@
               />
             </div>
           </div>
-          <div>
+          <div class="mt-4 flex flex-col justify-center items-center">
             <Button is="button" class="bg-primary btn" type="submit"
               >Log In</Button
             >
           </div>
         </form>
-        <div>
+        <div class="mt-8">
           <p>
             Don't have an account?
             <Button is="nuxt-link" class="bg-tertiary btn" to="/register"
@@ -100,7 +106,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .title {
