@@ -1,5 +1,5 @@
-<template functional>
-  <component :is="type" :href="href" :to="to" class="button">
+<template>
+  <component :is="type" :href="href" :to="to">
     <slot />
   </component>
 </template>
@@ -17,6 +17,7 @@ export default {
     },
   },
   computed: {
+    // TODO:
     type() {
       switch (true) {
         case this.href:
@@ -30,3 +31,21 @@ export default {
   },
 };
 </script>
+
+<style scope>
+.btn {
+  @apply inline-block text-white px-5 py-3 rounded-lg shadow-lg uppercase tracking-wider font-semibold text-base;
+
+  &:hover {
+    @apply bg-green-500;
+  }
+
+  &:active {
+    @apply bg-green-500;
+  }
+
+  &:focus {
+    @apply outline-none shadow-outline;
+  }
+}
+</style>

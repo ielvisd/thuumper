@@ -36,15 +36,18 @@
       <div
         class="mt-6 flex flex-row max-w-md lg:ml-auto justify-center lg:justify-start"
       >
-        <nuxt-link to="/login" class="bg-primary btn"> Login </nuxt-link>
-        <a
+        <Button is="nuxt-link" to="/login" class="bg-primary btn">
+          Login
+        </Button>
+        <Button
+          is="a"
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           rel="noopener noreferrer"
           class="bg-tertiary ml-4 btn"
         >
           Sign Up
-        </a>
+        </Button>
       </div>
     </div>
     <div class="hidden lg:flex items-center mr-auto lg:w-1/2">
@@ -59,27 +62,17 @@
 </template>
 
 <script>
-export default {};
+import Button from '../components/Button';
+export default {
+  name: 'Thuumper',
+  components: {
+    Button,
+  },
+};
 </script>
 
 <style scoped>
 .container {
-  @apply flex justify-center mx-auto;
-}
-
-.btn {
-  @apply inline-block text-white px-5 py-3 rounded-lg shadow-lg uppercase tracking-wider font-semibold text-base;
-
-  &:hover {
-    @apply bg-green-500;
-  }
-
-  &:active {
-    @apply bg-green-500;
-  }
-
-  &:focus {
-    @apply outline-none shadow-outline;
-  }
+  @apply flex mx-auto;
 }
 </style>
