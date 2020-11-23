@@ -1,7 +1,6 @@
 const state = {
   loggedIn: false,
   user: null,
-  role: 'free',
 };
 
 export const getters = {

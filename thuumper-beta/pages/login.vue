@@ -1,5 +1,3 @@
-// pages/login.vue
-
 <template>
   <section role="main">
     <div class="container bg-secondary">
@@ -65,7 +63,6 @@ export default {
     // Notification,
     Button,
   },
-  middleware: 'auth',
 
   data() {
     return {

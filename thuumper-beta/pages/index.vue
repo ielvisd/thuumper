@@ -86,7 +86,6 @@ import Button from '../components/Button';
 
 export default {
   name: 'Thuumper',
-  middleware: 'auth',
   components: {
     Button,
   },
