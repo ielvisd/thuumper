@@ -45,7 +45,10 @@
           </p>
         </div>
         <div v-if="isAuthenticated" class="mt-6 text-center">
-          <Button is="button" class="bg-primary btn" @click="logout">
+          <Button is="nuxt-link" class="bg-primary btn" to="/tasks">
+            Task Manager
+          </Button>
+          <Button is="button" class="bg-primary btn ml-4" @click="logout">
             Logout
           </Button>
         </div>

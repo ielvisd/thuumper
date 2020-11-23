@@ -7,6 +7,9 @@
         <h1 class="text-center font-bold uppercase tracking-wide">
           Task Manager Page
         </h1>
+        <Button is="nuxt-link" class="bg-primary btn mt-4" to="/">
+          Home
+        </Button>
       </div>
     </div>
   </section>

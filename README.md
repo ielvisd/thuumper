@@ -39,9 +39,7 @@ To get the project up and running, and view components in the browser, complete 
 
 #### Accessibility
 
-Accessibility was checked using Storybook's Accessibility Addon & the Axe Chrome Extension.
-https://www.npmjs.com/package/@storybook/addon-a11y
-https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US
+Accessibility was checked using Storybook's Accessibility Addon (https://www.npmjs.com/package/@storybook/addon-a11y) & the Axe Chrome Extension (https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US).
 
 ---
 
@@ -70,5 +68,6 @@ A couple of items that I wanted to get to but ran out of time:
 - More components
 - Reusable logic
 - Further Storybook customization/add-ons
+- Task Manager page/functionality
 
 ---
