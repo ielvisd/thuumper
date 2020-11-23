@@ -89,6 +89,7 @@ export default {
   components: {
     Button,
   },
+  middleware: 'auth',
   computed: {
     ...mapGetters('taskManager', ['isAuthenticated', 'loggedInUser']),
   },
