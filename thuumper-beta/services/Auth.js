@@ -15,7 +15,6 @@ const login = async ({ password, email }) =>
           },
         });
       } else {
-        console.log('testing');
         reject({
           message: 'That does not match any user in our records.',
         });

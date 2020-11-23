@@ -8,6 +8,15 @@
 
 #### https://thuumper-storybook.ielvis.vercel.app/
 
+#### Built With
+
+- Vue
+- Nuxt
+- Tailwind
+- Storybook
+
+---
+
 #### Requirements
 
 1. Node
@@ -28,17 +37,38 @@ To get the project up and running, and view components in the browser, complete 
 
 ---
 
+#### Accessibility
+
+Accessibility was checked using Storybook's Accessibility Addon & the Axe Chrome Extension.
+https://www.npmjs.com/package/@storybook/addon-a11y
+https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US
+
+---
+
+#### Performance
+
+Performance was checked using Lighthouse Metrics
+https://lighthouse-metrics.com/one-time-tests/5fbb5fe9d4d0c7000806ca6d
+
+---
+
 #### Testing
 
 Jest is used for unit and snapshot testing. From `yarn test`
 
 ---
 
-#### Built With
+#### Wishlist / Ran out of Time
 
-- Vue
-- Nuxt
-- Tailwind
-- Storybook
+A couple of items that I wanted to get to but ran out of time:
+
+- A modal that announces that Thuumper is in closed beta when users try to sign up
+- Use of Nuxt Color Mode module to trigger light/dark modes
+- End to end testing for MVP flows using Cypress
+- Loading states
+- More validation of email & password prior to using backend services
+- More components
+- Reusable logic
+- Further Storybook customization/add-ons
 
 ---

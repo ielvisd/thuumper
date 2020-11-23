@@ -91,7 +91,12 @@ export default {
   },
 
   methods: {
-    ...mapMutations('taskManager', ['setLoggedIn', 'setUser', 'setError']),
+    ...mapMutations('taskManager', [
+      'setLoggedIn',
+      'setUser',
+      'setError',
+      'clearErrors',
+    ]),
     signup() {
       const newLine = '\r\n';
       let msg = 'Thuumper is in closed beta.';
@@ -104,6 +109,9 @@ export default {
       alert(msg);
     },
     async thuumperLoginAttempt() {
+      // Clear the errors
+      this.clearErrors();
+
       // Check if there is an email
       if (!this.email) {
         this.setError('Email is required.');
@@ -126,7 +134,7 @@ export default {
         this.setUser(this.email);
         this.$router.push('/');
       } catch (e) {
-        this.error = e.message;
+        this.setError(e.message);
       }
     },
   },
